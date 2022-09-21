@@ -15,6 +15,12 @@
 
 <script>
 
+    setTimeout(() => {
+        let load = "loading";
+        $(".container").html(load);
+
+    }, 1)
+
     function makeRequest() {
         setTimeout(() => {
             fetch('https://polished-bouncy-health.glitch.me/movies').then((data) => {
