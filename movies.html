@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movies Project</title>
+</head>
+<body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    fetch('https://polished-bouncy-health.glitch.me/movies').then((data) => {
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData);
+
+        for(let i = 0; i < objectData.length; i++) {
+
+            let movieTitle = (objectData[i].title);
+            console.log(`Movie Title: ${movieTitle}`);
+        }
+    })
+
+
+</script>
+</body>
+</html>
