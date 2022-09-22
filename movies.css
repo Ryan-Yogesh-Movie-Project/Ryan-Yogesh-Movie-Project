@@ -6,3 +6,9 @@
     text-align: center;
     align-content: center;
 }
+.card {
+    background-color: darkgray;
+}
+.card.active {
+    background-color: darkgray;
+}
