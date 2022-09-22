@@ -1,6 +1,7 @@
 .image {
     height: 45vh;
     width: 18vw;
+    margin-top: 10px;
 }
 .movieInfo {
     text-align: center;
@@ -8,7 +9,10 @@
 }
 .card {
     background-color: darkgray;
+    margin-bottom: 10px;
 }
-.card.active {
-    background-color: darkgray;
+.deleteButton {
+    width: 25%;
+    border: 2px solid black;
+    margin-bottom: 10px;
 }

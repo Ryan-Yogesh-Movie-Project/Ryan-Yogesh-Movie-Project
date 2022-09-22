@@ -18,27 +18,6 @@
 
 <script>
 
-<!-------------Movie scroll effect-------------->
-    // function addCardListeners() {
-    // const cards = document.querySelectorAll('.card');
-    //
-    //     cards.forEach(function (card) {
-    //         card.addEventListener("onload", function () {
-    //             removeActiveClasses();
-    //             card.classList.add('active');
-    //         });
-    //     });
-    //
-    //     function removeActiveClasses() {
-    //         cards.forEach(function (card) {
-    //             card.classList.remove('active');
-    //         });
-    //     }
-    // }
-
-
-
-
     setTimeout(() => {
         let load = "";
         load +=`<div class="d-flex align-items-center">
@@ -80,20 +59,46 @@
                     movieContent += `<div class="card">
                                         <div class="movieInfo">
                                             <img class="image" alt="Image" src="${moviePoster}" <br>
-                                            <p class="movie_id">ID: ${movieId}</p>
                                             <p class="title">Title: ${movieTitle}</p>
                                             <p class="director">Director: ${movieDirector}</p>
                                             <p class="genre">Genre: ${movieGenre}</p>
                                             <p class="rating">Rating: ${movieRating}</p>
+                                            <button value="${movieId}" type="button" class="deleteButton">Delete Movie</button>
                                         </div>
                                      </div>`
                 }
                 $(".container").html(movieContent);
-                // addCardListeners();
-            });
+                deleteFunction();
+            }).catch(error => console.log(error));
         }, 1000)
     }
     makeRequest();
+
+    //Delete Functionality
+    function deleteFunction () {
+        $(".deleteButton").on("click", function(e) {
+            console.log($(this).val());
+            $(this).css("background-color", "black").css("color", "white");
+            e.preventDefault();
+            const url = 'https://polished-bouncy-health.glitch.me/movies/' + $(this).val();
+            const options = {
+                method: 'delete',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            };
+            fetch(url, options).then(() => fetch('https://polished-bouncy-health.glitch.me/movies')).then((data) => {
+                return data.json();
+            }).then((objectData) => {
+                console.log(objectData);
+            }).catch((error) => {
+                console.log(error);
+            });
+        });
+    }
+
+
+
 
 </script>
 </body>
