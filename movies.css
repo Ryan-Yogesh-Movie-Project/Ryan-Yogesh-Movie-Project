@@ -20,6 +20,12 @@
     background-color: white;
     color: black;
 }
+#saveButton {
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
 .formContent {
     display: flex;
     flex-direction: row;
@@ -29,5 +35,9 @@
 }
 .formContent>input {
     width: 85%;
+}
+.dropdown-menu {
+    width: 475px;
+    padding: 10px;
 }
 
