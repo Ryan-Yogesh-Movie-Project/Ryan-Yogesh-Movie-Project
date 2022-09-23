@@ -10,45 +10,61 @@
 </head>
 <body>
 
-<!--Add Movie Form-->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" id="addButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add A Movie?
-</button>
-
-<!-- Modal -->
-<div class="modal fade modal-dialog modal-dialog-centered" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add your favorite Movie!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                    <div class="formContent">
-                        <label for="addTitle">Title:</label>
-                        <input type="text" id="addTitle">
-                    </div>
-                    <div class="formContent">
-                        <label for="addDirector">Director:</label>
-                        <input type="text" id="addDirector">
-                    </div>
-                    <div class="formContent">
-                        <label for="addRating">Rating:</label>
-                        <input type="text" id="addRating">
-                    </div>
-                    <div class="formContent">
-                        <label for="addGenre">Genre:</label>
-                        <input type="text" id="addGenre">
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="closeButton" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
-            </div>
+<!--Bootstrap NavBar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Movies Project</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown" id="dropdownOption">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Add A Movie?</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <div class="formContent">
+                                <label for="addTitle">Title:</label>
+                                <input type="text" id="addTitle">
+                            </div>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <div class="formContent">
+                                <label for="addDirector">Director:</label>
+                                <input type="text" id="addDirector">
+                            </div>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <div class="formContent">
+                                <label for="addRating">Rating:</label>
+                                <input type="text" id="addRating">
+                            </div>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <div class="formContent">
+                                <label for="addGenre">Genre:</label>
+                                <input type="text" id="addGenre">
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" id="saveButton" class="btn btn-primary">Save changes</button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
         </div>
     </div>
-</div>
+</nav>
 
 <!--Movie Cards-->
 <div class="container"></div>
@@ -151,7 +167,6 @@
                 director: $("#addDirector").val(),
                 rating: $("#addRating").val(),
                 genre: $("#addGenre").val(),
-                id: idCounter
             };
             const url = 'https://polished-bouncy-health.glitch.me/movies/';
             const options = {
@@ -170,9 +185,6 @@
             })
         })
     }
-
-
-
 
 })();
 </script>

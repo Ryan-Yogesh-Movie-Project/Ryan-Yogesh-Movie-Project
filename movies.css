@@ -17,9 +17,8 @@
     margin-bottom: 10px;
 }
 #addButton {
-    background-color: black;
-    color: white;
-    border: 2px solid blue;
+    background-color: white;
+    color: black;
 }
 .formContent {
     display: flex;
